@@ -4,7 +4,11 @@ class Solution:
             return False
         
         for l in s:
-            if s.count(l)!=t.count(l):
-                return False
-        
+            t=t.replace(l,"",1)
+            
+        if len(t)!=0:
+            return False
         return True
+    
+    """if s.count(l)!=t.count(l):
+                return False"""
