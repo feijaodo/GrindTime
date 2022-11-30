@@ -1,10 +1,11 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        ineligible=[]
+        switch=0
+        ineligible=0
         for l in set(s):
             if s.count(l)&1==True:
-                ineligible+=[l]
-        if len(ineligible)==0:
-            return len(s)
-        else:
-            return len(s)-len(ineligible)+1
+                if switch==1:
+                    ineligible+=1
+                else:
+                    switch=1
+        return len(s)-ineligible
